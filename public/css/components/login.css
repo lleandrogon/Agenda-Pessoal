@@ -1,0 +1,111 @@
+.login-container {
+    background-color: var(--ap-light-gray);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    margin: 0;
+    width: 900px;
+    box-shadow: 0 2px 4px var(--ap-black);
+}
+
+.login {
+    background-color: var(--ap-white);
+    padding: 30px 25px;
+}
+
+.login-title-container {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.login-title {
+    font-size: 2.4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.login-subtitle {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.login-button-container {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.login-button {
+    background: linear-gradient(135deg, var(--ap-blue), var(--ap-purple));
+    color: var(--ap-white);
+    padding: 5px 20px;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+    transform: scale(1.1);
+    background: var(--ap-gray);
+    color: var(--ap-dark-blue);
+    box-shadow: 0 2px 8px var(--ap-dark-purple);
+} 
+
+.forgot-password-container {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.forgot-password {
+    color: var(--ap-blue);
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: var(--ap-purple);
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--ap-blue), var(--ap-dark-purple));
+    color: var(--ap-white);
+    padding: 40px 25px;
+}
+
+.register-title-container {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.register-title {
+    font-size: 2.4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.register-subtitle {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.register-button {
+    display: inline-block;
+    background: var(--ap-white);
+    color: var(--ap-dark-blue);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-button:hover {
+    transform: scale(1.1);
+    color: var(--ap-dark-blue);
+    box-shadow: 0 2px 8px var(--ap-white);
+} 

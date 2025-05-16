@@ -1,0 +1,33 @@
+:root {
+    --ap-dark-blue: #1666ab;
+    --ap-blue: #1E88E5;
+    --ap-purple: #BEA1D8;
+    --ap-dark-purple: #705f7f;
+    --ap-red: #ee0000;
+    --ap-light-gray: #f8fafc;
+    --ap-light-black: #333333;
+    --ap-black: #000000;
+    --ap-white: #ffffff;
+}
+
+.form-control {
+    border-radius: 20px;
+    font-size: 1.2em;
+}
+
+.ap-button {
+    font-size: 1.3em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 7px 25px;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.error {
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--ap-red);
+    margin-top: 10px;
+}
