@@ -1,0 +1,38 @@
+.home-container {
+    background-color: var(--ap-light-gray);
+    width: 100%;
+    height: 100vh;
+}
+
+.title {
+    text-align: center;
+    color: var(--ap-dark-blue);
+    font-weight: 600;
+    margin: 40px 0; 
+}
+
+.table {
+    width: 90%;
+    background-color: var(--ap-white);
+    margin: 0 auto 40px;
+}
+
+.table thead tr th {
+    font-size: 1.1em;
+}
+
+tr, td {
+    text-align: center;
+    vertical-align: center;
+}
+
+.fa-pen-to-square {
+    color: var(--ap-blue);
+    font-size: 1.5em;
+}
+
+.fa-x {
+    color: var(--ap-red);
+    font-size: 1.6em;
+    cursor: pointer;
+}

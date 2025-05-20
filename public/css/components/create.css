@@ -1,0 +1,51 @@
+.create-container {
+    background-color: var(--ap-light-gray);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: var(--ap-white);
+    width: 500px;
+    padding: 30px 25px;
+    margin: 0 20px;
+    box-shadow: 0 2px 4px var(--ap-black);
+    border-radius: 20px;
+}
+
+.create-title {
+    color: var(--ap-dark-purple);
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 25px 0;
+}
+
+.form-label {
+    color: var(--ap-blue);
+    margin-left: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.ap-button {
+    background: linear-gradient(135deg, var(--ap-blue), var(--ap-purple));
+    color: var(--ap-white);
+    padding: 5px 20px;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ap-button:hover {
+    transform: scale(1.1);
+    background: var(--ap-gray);
+    color: var(--ap-dark-blue);
+    box-shadow: 0 2px 8px var(--ap-dark-purple);
+}

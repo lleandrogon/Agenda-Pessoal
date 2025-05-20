@@ -1,13 +1,22 @@
 :root {
-    --ap-dark-blue: #1666ab;
-    --ap-blue: #1E88E5;
-    --ap-purple: #BEA1D8;
-    --ap-dark-purple: #705f7f;
+    --ap-blue: #3462FF;
+    --ap-dark-blue: #2749ba;
+    --ap-purple: #C723FF;
+    --ap-dark-purple: #921bb9;
     --ap-red: #ee0000;
-    --ap-light-gray: #f8fafc;
+    --ap-light-gray: #EDF2F7;
     --ap-light-black: #333333;
     --ap-black: #000000;
     --ap-white: #ffffff;
+}
+
+body {
+    background-color: var(--ap-light-gray);
+}
+
+.form-label {
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .form-control {
@@ -22,6 +31,14 @@
     padding: 7px 25px;
     border: none;
     border-radius: 20px;
+    text-decoration: none;
+}
+
+.no-makers {
+    list-style-type: none;
+}
+
+.no-underline {
     text-decoration: none;
 }
 

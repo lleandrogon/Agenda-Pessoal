@@ -1,0 +1,74 @@
+header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.225);
+}
+
+.row {
+    margin: 0;
+}
+
+.agenda {
+    width: 80px;
+}
+
+.navbar li {
+    font-size: 1.4em;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 20px;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+    color: var(--ap-blue);
+}
+
+.navbar button {
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--ap-blue);
+}
+
+.navbar li:hover, button:hover {
+    color: var(--ap-dark-purple);
+}
+
+.fa-bars {
+    font-size: 3.2em;
+    margin-right: 5px;
+    transition: transform 0.3s ease;
+}
+
+.fa-bars:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
+    color: var(--ap-dark-purple);
+}
+
+.responsive-navbar {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.responsive-navbar li {
+    padding: 20px 0;
+    font-size: 1.3em;
+    color: var(--ap-blue);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.responsive-navbar button {
+    border: none;
+    background-color: transparent;
+    color: var(--ap-blue);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar li:hover, button:hover {
+    color: var(--ap-dark-purple);
+}
