@@ -7,6 +7,8 @@ use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function PHPUnit\Framework\isEmpty;
+
 class EventController extends Controller
 {
     /**
@@ -50,13 +52,19 @@ class EventController extends Controller
 
         $request->validate($rules, $feedback);
 
+        $end_date = $request->end_date;
+
+        if (isEmpty($end_date)) {
+            $end_date = $request->start_date;
+        }
+
         Event::create([
             'user_id' => Auth::id(),
             'title' => $request->title,
             'body' => $request->body,
             'place' => $request->place,
             'start_date' => $request->start_date,
-            'end_date' => $request->end_date
+            'end_date' => $end_date
         ]);
 
         return redirect()->route('home')->with('new', 'Nova tarefa criada!');
@@ -111,13 +119,19 @@ class EventController extends Controller
 
         $request->validate($rules, $feedback);
 
+        $end_date = $request->end_date;
+
+        if (isEmpty($end_date)) {
+            $end_date = $request->start_date;
+        }
+
         $event->update([
             'user_id' => Auth::id(),
             'title' => $request->title,
             'body' => $request->body,
             'place' => $request->place,
             'start_date' => $request->start_date,
-            'end_date' => $request->end_date
+            'end_date' => $end_date
         ]);
 
         return redirect()->route('home')->with('new', 'Tarefa editada!');
@@ -128,6 +142,9 @@ class EventController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $event = Event::findOrFail($id);
+        $event->delete();
+
+        return redirect()->route('home');
     }
 }

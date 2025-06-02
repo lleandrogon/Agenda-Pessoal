@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $events = Event::where('user_id', Auth::id())->paginate(10);
+        $events = Event::where('user_id', Auth::id())->orderBy('start_date')->paginate(10);
 
         return view('home', compact('events'));
     }

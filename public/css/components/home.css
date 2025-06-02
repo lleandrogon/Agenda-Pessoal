@@ -31,8 +31,17 @@ tr, td {
     font-size: 1.5em;
 }
 
+.x-button {
+    border: none;
+    background-color: transparent;
+}
+
 .fa-x {
     color: var(--ap-red);
     font-size: 1.6em;
     cursor: pointer;
+}
+
+.fa-x:hover {
+    color: var(--ap-dark-red);
 }

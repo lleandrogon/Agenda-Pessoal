@@ -40,7 +40,7 @@
                         <form action="{{ route('event.destroy', $event->id) }}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <td><i class="fa-solid fa-x"></i></td>
+                            <td><button class="x-button" type="submit"><i class="fa-solid fa-x"></i></button></td>
                         </form>
                     </tr>
                 @endforeach
