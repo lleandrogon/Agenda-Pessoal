@@ -9,6 +9,10 @@
 
     <div class="home-container">
         <h2 class="title">Minha Agenda</h2>
+
+        <form action="{{ route('event.search') }}" method="GET" class="search-container">
+            <input type="search" class="search-input" name="search"><button type="submit" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
         
         @if (session('new'))
             <div class="d-flex justify-content-center">
@@ -17,6 +21,12 @@
                 </div>
             </div>
         @endif
+
+        <div class="excel-container">
+            <form action="{{ route('event.export') }}" method="GET">
+                <button type="submit" class="excel-button">Exportar Excel</button>
+            </form>
+        </div>
 
         <table class="table">
             <thead>
@@ -32,7 +42,7 @@
             <tbody>
                 @foreach ($events as $key => $event)
                     <tr>
-                        <td>{{ $event->title }}</td>
+                        <td><a href="{{ route('event.show', $event->id) }}" class="event-link">{{ $event->title }}</a></td>
                         <td>{{ $event->place }}</td>
                         <td>{{ date('d/m/Y', strtotime($event->start_date)) }}</td>
                         <td>{{ date('d/m/Y', strtotime($event->end_date)) }}</td>
@@ -46,5 +56,17 @@
                 @endforeach
             </tbody>
         </table>
+
+        <nav aria-label="Page navigation example" class="paginate-nav d-flex justify-content-center w-100">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="{{ $events->previousPageUrl() }}">Voltar</a></li>
+
+                @for ($e = 1; $e <= $events->lastPage(); $e++)
+                    <li class="page-item {{ $events->currentPage() == $e ? 'active' : '' }}"><a class="page-link" href="{{ $events->url($e) }}">{{ $e }}</a></li>
+                @endfor
+                
+                <li class="page-item"><a class="page-link" href="{{ $events->nextPageUrl() }}">Avançar</a></li>
+            </ul>
+        </nav>
     </div>
 @endsection

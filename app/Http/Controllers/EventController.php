@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\EventsExport;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -75,7 +77,9 @@ class EventController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $event = Event::findOrFail($id);
+
+        return view('show', compact('event'));
     }
 
     /**
@@ -146,5 +150,9 @@ class EventController extends Controller
         $event->delete();
 
         return redirect()->route('home');
+    }
+
+    public function excelExport() {
+        return Excel::download(new EventsExport, 'agenda.xlsx');
     }
 }

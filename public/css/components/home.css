@@ -8,17 +8,85 @@
     text-align: center;
     color: var(--ap-dark-blue);
     font-weight: 600;
-    margin: 40px 0; 
+    margin: 40px 0 20px 0; 
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.search-input, .search-button {
+    padding: 5px 10px;
+}
+
+.search-input {
+    background-color: var(--ap-light-gray);
+    border: 2px solid var(--ap-dark-blue);
+    border-right: none;
+    width: 250px;
+    font-size: 1.1em;
+    border-radius: 25px 0 0 25px;
+}
+
+.search-input:focus {
+    outline: none;
+    background-color: var(--ap-white);
+}
+
+.search-button {
+    border: none;
+    background: linear-gradient(135deg, var(--ap-dark-purple), var(--ap-dark-blue));
+    border: 2px solid var(--ap-dark-blue);
+    border-left: none;
+    border-radius: 0 25px 25px 0;
+    padding: 0 15px;
+    transition: background 0.3s ease;
+}
+
+.search-button:hover {
+    background: linear-gradient(135deg, var(--ap-purple), var(--ap-blue));
+}
+
+.fa-magnifying-glass {
+    color: var(--ap-white);
+    font-size: 1.1em;
+}
+
+.excel-container {
+    width: 95%;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+}
+
+.excel-button {
+    background: linear-gradient(135deg, var(--ap-green), var(--ap-dark-green));
+    color: var(--ap-white);
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.excel-button:hover {
+    color: var(--ap-white);
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px var(--ap-green);
 }
 
 .table {
     width: 90%;
     background-color: var(--ap-white);
     margin: 0 auto 40px;
+    font-size: 0.8em;
 }
 
 .table thead tr th {
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 tr, td {
@@ -26,9 +94,22 @@ tr, td {
     vertical-align: center;
 }
 
+.event-link {
+    color: var(--ap-black);
+    text-decoration: none;
+}
+
+.event-link:hover {
+    color: var(--ap-blue);
+}
+
 .fa-pen-to-square {
     color: var(--ap-blue);
     font-size: 1.5em;
+}
+
+.fa-pen-to-square:hover {
+    color: var(--ap-dark-blue);
 }
 
 .x-button {
@@ -44,4 +125,22 @@ tr, td {
 
 .fa-x:hover {
     color: var(--ap-dark-red);
+}
+
+.paginate-nav a {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--ap-dark-blue);
+    transition: color 0.3 ease;
+}
+
+.paginate-nav a:hover {
+    color: var(--ap-purple);
+}
+
+
+@media (min-width: 768px) {
+    .table {
+        font-size: 1.1em;
+    }
 }

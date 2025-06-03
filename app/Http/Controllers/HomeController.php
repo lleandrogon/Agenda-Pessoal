@@ -29,4 +29,11 @@ class HomeController extends Controller
 
         return view('home', compact('events'));
     }
+
+    public function search(Request $request) {
+        $search = $request->search;
+        $events = Event::where('title', 'LIKE', "%{$search}%")->paginate(10);
+
+        return view('home', compact('events'));
+    }
 }

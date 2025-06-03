@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+    <div class="arrow-container">
+        <a href="{{ route('home') }}"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
     <div class="edit-container">
         <form action="{{ route('event.update', $event->id) }}" method="POST">
             @method('PUT')

@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+    <div class="arrow-container">
+        <a href="{{ route('home') }}"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
     <div class="create-container">
         <form action="{{ route('event.store') }}" method="POST">
             @csrf

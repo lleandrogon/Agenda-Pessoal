@@ -21,11 +21,11 @@
     </div>
     <div class="d-none d-lg-none" id="responsiveNav">
         <ul class="responsive-navbar d-flex">
-            <li class="no-makers"><a href="{{ route('home') }}" class="no-underline">Home</a></li>
-            <li class="no-makers"><a href="{{ route('event.create') }}" class="no-underline">Criar</a></li>
+            <li class="no-makers me-4"><a href="{{ route('home') }}" class="no-underline">Home</a></li>
+            <li class="no-makers me-4"><a href="{{ route('event.create') }}" class="no-underline">Criar</a></li>
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                <li class="no-makers"><button type="submit" class="no-underline">Logout</button></li>
+                <li class="no-makers me-4"><button type="submit" class="no-underline">Logout</button></li>
             </form>
         </ul>
     </div>
