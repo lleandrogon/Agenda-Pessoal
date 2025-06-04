@@ -59,13 +59,19 @@
 
         <nav aria-label="Page navigation example" class="paginate-nav d-flex justify-content-center w-100">
             <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="{{ $events->previousPageUrl() }}">Voltar</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="{{ $events->previousPageUrl() }}">Voltar</a>
+                </li>
 
                 @for ($e = 1; $e <= $events->lastPage(); $e++)
-                    <li class="page-item {{ $events->currentPage() == $e ? 'active' : '' }}"><a class="page-link" href="{{ $events->url($e) }}">{{ $e }}</a></li>
+                    <li class="page-item {{ $events->currentPage() == $e ? 'active' : '' }}">
+                        <a class="page-link" href="{{ $events->url($e) }}">{{ $e }}</a>
+                    </li>
                 @endfor
                 
-                <li class="page-item"><a class="page-link" href="{{ $events->nextPageUrl() }}">Avançar</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="{{ $events->nextPageUrl() }}">Avançar</a>
+                </li>
             </ul>
         </nav>
     </div>
