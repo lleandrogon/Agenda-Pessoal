@@ -105,7 +105,7 @@ class EventController extends Controller
 
         $rules = [
             'title' => 'required|string|max:50',
-            'body' => 'nullable|string|max:300',
+            'body' => 'nullable|string|max:1000',
             'place' => 'nullable|string|max:50',
             'start_date' => 'required|date',
             'end_date' => 'nullable|date' 
@@ -114,7 +114,7 @@ class EventController extends Controller
         $feedback = [
             'title.required' => 'Título é obrigatório!',
             'title.max' => 'Título deve ter no máximo 50 caracteres!',
-            'body.max' => 'Descrição deve ter no máximo 300 caracteres!',
+            'body.max' => 'Descrição deve ter no máximo 1000 caracteres!',
             'place.max' => 'Local deve ter no máximo 50 caracteres!',
             'start_date.required' => 'Data de início é obrigatória!',
             'start_date.date' => 'Data de início inválida!',
