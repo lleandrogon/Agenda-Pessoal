@@ -20,7 +20,7 @@ class EventFactory extends Factory
         $end = fake()->dateTimeBetween($start, (clone $start)->modify('+2 days'));
 
         return [
-            'user_id' => 1,
+            'user_id' => 17,
             'title' => fake()->sentence(4),
             'body' => fake()->text(rand(50, 500)),
             'place' => fake()->city(),

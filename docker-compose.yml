@@ -1,0 +1,63 @@
+services:
+  # PHP
+  agenda_php:
+    build: 
+      context: ./
+    container_name: agenda_php
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "9000:9000"
+    networks:
+      - agenda_network
+
+  #Vite
+  agenda_vite:
+    build: 
+      context: ./
+      dockerfile: Dockerfile.vite
+    container_name: agenda_vite
+    volumes:
+      - ./:/var/www/html
+      - /var/www/html/node_modules
+    ports:
+      - "5173:5173"
+    networks:
+      - agenda_network
+    depends_on:
+      - agenda_php
+
+  #Nginx
+  agenda_nginx:
+    image: nginx:stable-alpine3.21
+    container_name: agenda_nginx
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./:/var/www/html
+    ports:
+      - "80:80"
+    networks:
+      - agenda_network
+    depends_on:
+      - agenda_php
+
+  #MySQL
+  agenda_mysql:
+    image: mysql:8.4.3
+    container_name: agenda_mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - agenda_network
+    volumes:
+      - /projetos/volume_data:/var/lib/mysql
+
+networks:
+  agenda_network:
+    driver: bridge
+    name: agenda_network
