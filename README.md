@@ -77,13 +77,7 @@ docker exec -it agenda_php php artisan key:generate
 docker exec -it agenda_php php artisan migrate
 ```
 
-### 6. Build do frontend
-```bash
-docker exec -it agenda_vite npm install
-docker exec -it agenda_vite npm run dev
-```
-
-### 7. Acesse o sistema
+### 6. Acesse o sistema
 - Backend: 👉 [http://localhost:8000](http://localhost:8000)  
 - Vite (dev server): 👉 [http://localhost:5173](http://localhost:5173)
 
